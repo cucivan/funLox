@@ -7,7 +7,6 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
 
 public class Lox {
     //field
@@ -17,7 +16,7 @@ public class Lox {
         byte[] bytes = Files.readAllBytes(Paths.get(path));
         run(new String(bytes, Charset.defaultCharset()));
 
-        //for indicate a error happen in the excuction of code
+        //for indicate an error happen in the excuction of code
         if (hadError)
             System.exit(65);
     }
@@ -48,7 +47,7 @@ public class Lox {
         }
     }
 
-    static void err(int line, String message) {
+    static void error(int line, String message) {
         report(line, "", message);
     }
     private static void report(int line, String where, String message) {
