@@ -164,8 +164,8 @@ public class Scanner {
         current++;
         return true;
     }
-    private void addToken(final TokenType type) {
-        tokens.add(new Token(type, "", null, line));
+    private void addToken(TokenType type) {
+        addToken(type, null);
     }
     private void addToken(final TokenType type, Object literal) {
         String lexme = source.substring(start, current);
